@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Redirecting...</title>
+  <script>
+    function redirect() {
+      const params = new URLSearchParams(window.location.search);
+      const status = params.get("status");
+      const docId = params.get("docId");
+
+      const baseUrl = "https://2ee217396b6fe0ffb476c1e33c828f.d4.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/a37b176fcefb4094bf02bd2ff00808e3/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Q6-yuBMR6Moxw7m8UhR_bWg9sciMa1G6WuLgBqKcMZc";
+
+      const finalUrl =
+        baseUrl +
+        "?api-version=1" +
+        "&sp=/triggers/manual/run" +
+        "&sv=1.0" +
+        "&sig=Q6-yuBMR6Moxw7m8UhR_bWg9sciMa1G6WuLgBqKcMZc" +
+        "&status=" + status +
+        "&docId=" + docId;
+
+      window.location.href = finalUrl;
+    }
+  </script>
+</head>
+<body onload="redirect()">
+  <p>Redirecting...</p>
+</body>
+</html>
